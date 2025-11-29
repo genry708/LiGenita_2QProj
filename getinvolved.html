@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARAL — HGet Involved</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="getinvolved.css">
+
+  <!-- FontAwesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="hdr">
+    <div class="hdr-inner">
+      <div class="logo">
+        <img src="aralogo.png" alt="ARAL Logo">
+      </div>
+
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="stories.html">Stories</a>
+        <a href="getinvolved.html">Get Involved</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button type="submit" aria-label="Search">🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="bg">
+    <div class="quote">
+      <h1>Sa Bawat Hakbang, May Pag-asa</h1>
+      <h3>Change begins with us, and hope grows when we share it.</h3>
+    </div>
+  </section>
+
+  <!-- ================= PARAGRAPH ================= -->
+  <section class="container">
+    <h2>Make a Difference in a Child’s Education</h2>
+    <p>
+      Every child deserves the chance to learn, grow, and dream of a brighter future. 
+      By getting involved, your support helps provide essential resources, empower teachers, 
+      and bring quality education to communities where opportunities are limited. 
+      Whether through volunteering your time or contributing to our programs, 
+      your help becomes a powerful force in shaping the lives of children and 
+      building stronger, more hopeful communities.
+    </p>
+  </section>
+
+  <!-- ================= THREE FLOAT CARDS ================= -->
+  <section class="three-floats">
+    <div class="float-card card-anim">
+      <a href="https://childhope.org.ph/wp-content/uploads/2025/10/childhope-female-teaching-body-parts-1024x800.webp">
+        <img src="giimg1.webp" alt="Volunteers">
+      </a>
+      <h3>Volunteer Your Time</h3>
+      <p>Join our community programs and share your skills to inspire children and support teachers.</p>
+    </div>
+
+    <div class="float-card card-anim">
+      <a href="https://images.gmanews.tv/regionaltv2023/content_images/article/1as5d1_2025_11_20_17_27_37.png">
+        <img src="giimg2.png" alt="Provide Resources">
+      </a>
+      <h3>Provide Resources</h3>
+      <p>Your donations of school supplies or financial support help create classrooms filled with opportunity.</p>
+    </div>
+
+    <div class="float-card card-anim">
+      <a href="https://childhope.org.ph/wp-content/uploads/2025/07/learning-session-focused-on-personal-safety-and-protective-behavior.jpg">
+        <img src="giimg3.jpg" alt="Spread Awareness">
+      </a>
+      <h3>Spread Awareness</h3>
+      <p>By sharing our mission with friends and family, you amplify the call for equal education for all.</p>
+    </div>
+  </section>
+
+  <!-- ================= FORMS ================= -->
+  <section class="call-to-action">
+    <h2>Be Part of the Change</h2>
+    <div class="form-grid">
+
+      <!-- Volunteer Form -->
+      <form class="form-box" id="volunteer-form">
+        <h3>VOLUNTEER NOW!</h3>
+
+        <label for="vol-name" class="with-icon name">Name</label>
+        <input type="text" id="vol-name" name="vol-name" required>
+
+        <label for="vol-email" class="with-icon email">Email</label>
+        <input type="email" id="vol-email" name="vol-email" required>
+
+        <label for="vol-phone" class="with-icon phone">Phone Number</label>
+        <input type="tel" id="vol-phone" name="vol-phone" placeholder="09XXXXXXXXX" required>
+
+        <label for="vol-address" class="with-icon address">Address</label>
+        <input type="text" id="vol-address" name="vol-address" required>
+
+        <label for="vol-message">Message</label>
+        <textarea id="vol-message" name="vol-message" rows="4"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- Donate Form -->
+      <form class="form-box" id="donate-form">
+        <h3>DONATE NOW!</h3>
+
+        <div class="amount-options">
+          <button type="button">₱100</button>
+          <button type="button">₱500</button>
+          <button type="button">₱1000</button>
+          <button type="button">Custom</button>
+        </div>
+
+        <label for="don-name" class="with-icon name">Name</label>
+        <input type="text" id="don-name" required>
+
+        <label for="don-email" class="with-icon email">Email</label>
+        <input type="email" id="don-email" required>
+
+        <label for="don-amount">Amount (₱)</label>
+        <input type="number" id="don-amount" min="1" required>
+
+        <label for="don-gcash">GCash Number</label>
+        <input type="tel" id="don-gcash" placeholder="09XXXXXXXXX">
+
+        <label for="don-card">Card Number</label>
+        <input type="text" id="don-card" placeholder="XXXX XXXX XXXX XXXX">
+
+        <button type="submit">Donate</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="aralogo.png" alt="ARAL Logo">
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="stories.html">Stories</a>
+          <a href="getinvolved.html">Get Involved</a>
+          <a href="about.html">About Us</a>
+          <a href="https://example.com">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://example.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://example.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://example.com" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://example.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 ARAL. All rights reserved. |
+        <a href="https://example.com">Privacy Policy</a> |
+        <a href="https://example.com">Terms of Service</a>
+      </p>
+    </div>
+
+    <div class="footer-sources">
+      <p>Sources:</p>
+      <ul>
+        <li><a href="https://childhope.org.ph/wp-content/uploads/2025/07/learning-session-focused-on-personal-safety-and-protective-behavior.jpg" target="_blank">Staff, C. (2025, July 17). Learning Sessions that Empower: Childhope’s Alternative education. ChildHope Philippines.</a></li>
+        <li><a href="https://childhope.org.ph/wp-content/uploads/2025/10/childhope-female-teaching-body-parts-1024x800.webp" target="_blank">Staff, C. (2025b, October 30). Teaching Hope with Co-Teachers Who Inspire Street Kids. ChildHope Philippines.</a></li>
+        <li><a href="https://images.gmanews.tv/regionaltv2023/content_images/article/1as5d1_2025_11_20_17_27_37.png" target="_blank">Salvacio, S. (2025, November 20). Project brings school supplies, cheer to students in Mangaldan school. GMA News.</a></li>
+        <li><a href="https://es.vecteezy.com/arte-vectorial/7178929-icono-de-negocio-para-la-conexion-de-la-empresa-establecido-en-diferente-estilo-nombre-telefono-movil-lugar-ubicacion-correo-sitio-web-y-mensaje-tarjeta-firmar-contacto-simbolo-diseno-plantilla-vector-ilustracion">Sutiagina, L. (n.d.). Business Icon for Company Connection. Vecteezy.</a></li>
+        <li><a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">Fonticons, Inc. (2023). Font Awesome.</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

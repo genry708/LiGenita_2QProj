@@ -1,0 +1,606 @@
+/* ================= VARIABLES & RESET ================= */
+:root {
+  --blue: #1A237E;
+  --blue-dark: #283593;
+  --yellow: #ffd700;
+  --bg-light: #f7f9fb;
+  --nav-h: 72px;
+  --content-max: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg-light);
+  color: #0b1220;
+  line-height: 1.5;
+  padding-top: calc(var(--nav-h) + 12px);
+}
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 20px; }
+
+/* Highlight styles */
+.highlight { color: inherit; }
+.highlight.keep { color: var(--yellow);}
+
+/* ================= HEADER ================= */
+.hdr {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: var(--blue);
+  display: flex; align-items: center;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.hdr-inner {
+  width: 100%; max-width: var(--content-max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 0 20px;
+}
+.logo img { height: 48px; width: auto; margin-left: -25px; }
+
+.navbar { display: flex; gap: 50px; align-items: center; }
+.navbar a {
+  color: #fff; text-decoration: none; font-weight: 500; padding: 6px 0;
+  transition: color .2s;
+}
+.navbar a:hover,
+.navbar a.active { color: var(--yellow); }
+
+.search-box { display: flex; gap: 0; align-items: center; }
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 6px 0 0 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+.search-box button {
+  padding: 6px 10px;
+  border: none;
+  background: #fff;
+  color: var(--blue);
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.bg {
+  background: url("bg.png") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: calc(var(--nav-h) + 40px) 20px 60px;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  bottom: 30px;
+}
+.quote { max-width: var(--content-max); 
+    margin: 0 auto; 
+}
+
+.quote h1 {
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  margin-bottom: 6px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.45);
+}
+.quote h3 { font-weight: 400; opacity: 0.95; }
+
+/* ================= FIRST 3 STORIES ================= */
+.featured-story {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* IMAGES FOR FIRST THREE STORIES */
+.story-image.img1 {
+    background-image: url("https://thumbs.dreamstime.com/z/lonely-girl-1516612.jpg?w=576");
+}
+
+.story-image.img2 {
+    background-image: url("https://im.indiatimes.in/content/2022/Aug/techer-riding-bicycle_62f238cc7f6f9.jpg?w=1200&h=900&cc=1&webp=1&q=75");
+}
+
+.story-image.img3 {
+    background-image: url("https://www.telegraph.co.uk/multimedia/archive/01955/philippines-puddle_1955779i.jpg?imwidth=680");
+}
+
+/* ANIMATION FOR FIRST 3 STORIES */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+
+/* Stagger timing */
+.featured-story:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+
+.featured-story:nth-of-type(2) {
+    animation-delay: 0.3s;
+}
+
+.featured-story:nth-of-type(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.story-image {
+    transition: transform .4s ease;
+}
+
+.story-image:hover {
+    transform: scale(1.05);
+}
+
+.story-box {
+    flex: 1;
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 1;
+    position: relative;
+}
+
+.story-box h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.story-box p {
+    font-size: 16px;
+    color: #444;
+}
+
+.story-box a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #1f6feb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.story-box a:hover {
+    text-decoration: underline;
+}
+
+.story-image {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://via.placeholder.com/300');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    margin-left: -60px; /* makes it break out of the story box */
+    z-index: 2;
+}
+
+/* ================= FIRST 3 STORIES ================= */
+.featured-story {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.story-box {
+    flex: 1;
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 1;
+    position: relative;
+}
+
+.story-box h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.story-box p {
+    font-size: 16px;
+    color: #444;
+    margin-right: 5px;
+}
+
+
+.story-box a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #1f6feb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.story-box a:hover {
+    text-decoration: underline;
+}
+
+.story-image {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://via.placeholder.com/300');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    margin-left: -60px; /* makes it break out of the story box */
+    z-index: 2;
+
+   .featured-story {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        max-width: 1000px;
+        margin: 40px auto;
+        position: relative;
+    }
+
+    .featured-story.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .story-box {
+        flex: 1;
+        background: #fff;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        z-index: 1;
+        position: relative;
+    }
+
+    .story-box h2 {
+        margin-top: 0;
+        font-size: 28px;
+    }
+
+    .story-box p {
+        font-size: 16px;
+        color: #444;
+    }
+
+    .story-box a {
+        display: inline-block;
+        margin-top: 12px;
+        color: #1f6feb;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .story-box a:hover {
+        text-decoration: underline;
+    }
+
+    .story-image {
+        width: 300px;
+        height: 300px;
+        background-image: url('https://via.placeholder.com/300');
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        margin-right: -60px; /* breaks out of the story box */
+        z-index: 2;
+    }
+}
+
+
+
+/* ================= MORE STORIES ================= */
+/* Grid */
+.grid {
+  display:grid; 
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:18px; 
+  padding:24px; 
+  max-width:var(--maxw); 
+  margin:0 auto;
+}
+
+#more {
+  font-size: 1.3rem;
+  color: var(--blue);
+  margin-top: 50px;
+  text-align: center;
+  background-color: white;
+  padding: 5px 5px;
+}
+
+.card {
+  background:var(--card); 
+  border:1px solid var(--border);
+  border-radius:var(--radius); 
+  box-shadow:var(--shadow);
+  display:flex; 
+  flex-direction:column;
+  margin-top: 10px;
+}
+
+.card-media { 
+    background:#eef2ff; 
+    aspect-ratio:16/9; 
+    display:grid; 
+    place-items:center; 
+    color:var(--muted); 
+}
+
+.card-body { 
+    padding:14px; 
+}
+
+.kicker { 
+    font-size:12px; 
+    color:black; 
+    background: #eef2ff; 
+    padding:4px 8px; 
+    border-radius:999px; 
+}
+
+.card h3 { 
+    margin:6px 0; 
+    font-size:18px; 
+}
+
+.meta { 
+    font-size:12px; 
+    color:var(--muted); 
+    margin-bottom:8px; 
+}
+
+.excerpt { 
+    font-size:14px; 
+}
+
+.card-footer { 
+    margin-top:auto; 
+    display:flex; 
+    justify-content:space-between; 
+    padding:10px 14px; 
+    border-top:1px solid var(--border); 
+}
+
+.card-media {
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.img-1 { background-image: url('https://i.pinimg.com/originals/b1/32/86/b13286837396ba5f03bedc551d701954.png'); }
+.img-2 { background-image: url('https://filipinotimes.net/wp-content/uploads/2017/01/FeaturedImage_teacher_151015_1253.png'); }
+.img-3 { background-image: url('https://i.pinimg.com/originals/d2/cf/50/d2cf5008054c807a7c85715ae86e1592.jpg'); }
+
+.read-more { 
+    color:var(--brand); 
+    text-decoration:none; 
+    font-weight:600; 
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+.tag { 
+    font-size:12px; 
+    background:#eef2ff; 
+    padding:4px 8px; 
+    border-radius:999px;
+}
+
+/* More section */
+.more { 
+    display:flex; 
+    justify-content:space-between; 
+    padding:24px; 
+    max-width:var(--maxw); 
+    margin:0 auto; 
+    flex-wrap:wrap; 
+    gap:12px; 
+}
+
+.pager { 
+    display:flex; 
+    gap:8px; 
+}
+
+.page-btn { 
+    border:1px solid var(--border); 
+    background:#fff; 
+    padding:8px 12px; 
+    border-radius:6px; 
+}
+
+.page-btn.active { 
+    background:#fff; 
+    color:black; 
+}
+
+.cta { 
+    display:flex; 
+    gap:10px; 
+}
+
+.btn { 
+    padding:10px 14px; 
+    border:1px solid var(--border); 
+    border-radius:8px; 
+    background:#fff; 
+    cursor:pointer; 
+}
+
+.btn.primary { 
+    background:#fff; 
+    color:black; 
+    border:none; 
+}
+
+/* ================= PSEUDOCLASSES ================= */
+.page-btn:hover {
+  background: var(--blue-dark);
+  color: #fff;
+  transform: scale(1.1); /* transform function */
+  transition: all 0.3s ease; /* transition */
+}
+
+
+
+
+.page-btn:focus {
+  outline: 2px solid var(--blue-dark);
+  transform: translateY(-2px); /* transform function */
+}
+
+.card:nth-child(2) {
+  border: 2px solid var(--blue-dark); /* highlight second card */
+}
+
+
+/* 2. :focus → inputs glow when focused */
+input:focus {
+  outline: 2px solid var(--yellow);
+  background-color: #fff3;
+}
+
+/* 3. :nth-child → highlight 2nd story card */
+.grid .card:nth-child(2) {
+  border: 2px solid var(--blue);
+}
+
+/* 4. :not → apply style to all links EXCEPT footer links */
+a:not(.read-more) {
+  transition: color 0.3s ease;
+}
+
+/* ================= TRANSFORM + ANIMATION ================= */
+
+/* Card hover animation */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ================= FOOTER ================= */
+.footer { 
+  background: var(--blue); 
+  color: #fff; 
+  padding: 30px 0 18px; 
+  margin-top: 30px;
+}
+
+.footer-top {
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 18px 0;
+}
+.footer-inner {
+  max-width: var(--content-max); 
+  margin: 0 auto; 
+  padding: 0 20px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+.footer-logo img { 
+  height: 48px; 
+}
+
+.footer-links { 
+  display: flex; 
+  gap: 18px; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+}
+
+.footer-links a { 
+  color: #fff; 
+  transition: color .2s; 
+}
+
+.footer-links a:hover { 
+  color: var(--yellow); 
+}
+
+.footer-social { 
+  display: flex; 
+  gap: 12px; 
+}
+
+.footer-social a { 
+  color: #fff; 
+  font-size: 1.15rem; 
+  transition: color .2s; 
+}
+
+.footer-social a:hover { 
+  color: var(--yellow); 
+}
+
+.footer-bottom {
+  margin-top: 12px; 
+  text-align: center;
+  font-size: 0.9rem; 
+  opacity: 0.95;
+}
+
+.footer-bottom a { 
+  color: var(--yellow); 
+  text-decoration: none; 
+  margin: 0 6px; 
+}
+
+.footer-sources {
+  font-size: 0.7rem;
+  color: #f1f3ff;
+  margin-top: 5px;
+  margin-left: 7px;
+}
+
+.footer-sources ul {
+  list-style-type: disc; 
+  padding-left: 1.2rem;  
+  margin: 4px 0 0 0;
+}
+
+.footer-sources li {
+  margin: 2px 0;  
+}
+
+.footer-sources a {
+  color: #f1f3ff;
+  text-decoration: underline;
+}
+
+.footer-sources a:hover {
+  color: var(--yellow);
+}
